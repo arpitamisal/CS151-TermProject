@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx/fxml"
+      fx:controller="cs151.application.ProfileController"
+      alignment="CENTER" spacing="16">
+    <padding>
+        <Insets top="24" right="24" bottom="24" left="24"/>
+    </padding>
+
+    <!-- STUDENT PROFILE FORM -->
+    <VBox fx:id="profileBox" alignment="CENTER" spacing="12" visible="true" managed="true">
+        <Label text="Student Profile"
+               style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+        <ScrollPane fitToWidth="true" maxWidth="800" maxHeight="600">
+            <VBox spacing="12" alignment="CENTER">
+                
+                <!-- Basic Information Section -->
+                <VBox spacing="8" alignment="CENTER">
+                    <Label text="Basic Information" style="-fx-font-size:14px; -fx-font-weight:bold;"/>
+                    
+                    <HBox spacing="10" alignment="CENTER">
+                        <Label text="Full Name:" minWidth="120"/>
+                        <TextField fx:id="fullNameField" promptText="Enter full name" minWidth="200"/>
+                    </HBox>
+                    
+                    <HBox spacing="10" alignment="CENTER">
+                        <Label text="Academic Status:" minWidth="120"/>
+                        <ComboBox fx:id="academicStatusCombo" promptText="Select status" minWidth="200"/>
+                    </HBox>
+                    
+                    <HBox spacing="10" alignment="CENTER">
+                        <Label text="Job Status:" minWidth="120"/>
+                        <HBox spacing="10">
+                            <RadioButton fx:id="employedRadio" text="Employed"/>
+                            <RadioButton fx:id="notEmployedRadio" text="Not Employed"/>
+                        </HBox>
+                    </HBox>
+                    
+                    <HBox spacing="10" alignment="CENTER">
+                        <Label text="Job Details:" minWidth="120"/>
+                        <TextField fx:id="jobDetailsField" promptText="Enter job details if employed" minWidth="200" disable="true"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Skills and Interests Section -->
+                <VBox spacing="8" alignment="CENTER">
+                    <Label text="Skills and Interests" style="-fx-font-size:14px; -fx-font-weight:bold;"/>
+                    
+                    <HBox spacing="20" alignment="CENTER">
+                        <VBox spacing="5" alignment="CENTER">
+                            <Label text="Programming Languages:"/>
+                            <ListView fx:id="programmingLanguagesList" prefWidth="200" prefHeight="120"/>
+                        </VBox>
+                        
+                        <VBox spacing="5" alignment="CENTER">
+                            <Label text="Databases Known:"/>
+                            <ListView fx:id="databasesList" prefWidth="200" prefHeight="120"/>
+                        </VBox>
+                    </HBox>
+                    
+                    <HBox spacing="10" alignment="CENTER">
+                        <Label text="Preferred Role:" minWidth="120"/>
+                        <ComboBox fx:id="preferredRoleCombo" promptText="Select role" minWidth="200"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Faculty Evaluation Section -->
+                <!-- <VBox spacing="8" alignment="CENTER"> -->
+                    <!-- <Label text="Faculty Evaluation" style="-fx-font-size:14px; -fx-font-weight:bold;"/> -->
+                    
+                    <!-- <VBox spacing="5" alignment="CENTER"> -->
+                        <!-- <Label text="Comments/Journal Entries:"/> -->
+                        <!-- <TextArea fx:id="commentsArea" promptText="Add comments or journal entries..." prefWidth="400" prefHeight="100"/> -->
+                        <!-- <Button text="Add Comment" onAction="#addComment"/> -->
+                    <!-- </VBox> -->
+                <!-- </VBox> -->
+
+                <!-- Future Services Flags Section -->
+                <VBox spacing="8" alignment="CENTER">
+                    <Label text="Future Services Flags" style="-fx-font-size:14px; -fx-font-weight:bold;"/>
+                    
+                    <HBox spacing="20" alignment="CENTER">
+                        <CheckBox fx:id="whitelistCheck" text="Whitelist (eligible for additional support)"/>
+                        <CheckBox fx:id="blacklistCheck" text="Blacklist (no future services)"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Status and Actions -->
+                <Label fx:id="statusLabel" text=""
+                       style="-fx-font-size:11px; -fx-text-fill:#666;"/>
+
+                <HBox spacing="10" alignment="CENTER">
+                    <Button text="Save Profile" onAction="#saveProfile" style="-fx-background-color:#4CAF50; -fx-text-fill:white;"/>
+                    <Button text="Back" onAction="#back"/>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </VBox>
+</VBox>

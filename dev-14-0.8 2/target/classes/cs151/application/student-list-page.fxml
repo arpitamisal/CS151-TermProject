@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx/fxml"
+      fx:controller="cs151.application.ProfileListController"
+      alignment="CENTER" spacing="16">
+    <padding>
+        <Insets top="24" right="24" bottom="24" left="24"/>
+    </padding>
+
+
+    <!-- STUDENT LIST -->
+    <VBox fx:id="listBox" alignment="CENTER" spacing="12" visible="true" managed="true">
+        <Label text="Student Profiles"
+               style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+        <TableView fx:id="studentTable" prefWidth="800" prefHeight="400">
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Name" prefWidth="200"/>
+                <TableColumn fx:id="statusColumn" text="Academic Status" prefWidth="150"/>
+                <TableColumn fx:id="roleColumn" text="Preferred Role" prefWidth="150"/>
+            </columns>
+        </TableView>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Edit Selected" onAction="#editStudent" style="-fx-background-color:#2196F3; -fx-text-fill:white;"/>
+            <Button text="Delete Selected" onAction="#deleteStudent" style="-fx-background-color:#f44336; -fx-text-fill:white;"/>
+            <!-- <Button text="Add New Profile" onAction="#showProfile" style="-fx-background-color:#4CAF50; -fx-text-fill:white;"/> -->
+            <Button text="Back to Home" onAction="#showHome"/>
+        </HBox>
+
+        <Label fx:id="statusLabel" text=""
+               style="-fx-font-size:11px; -fx-text-fill:#666;"/>
+    </VBox>
+</VBox>

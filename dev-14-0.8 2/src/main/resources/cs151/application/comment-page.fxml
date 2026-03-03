@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx/fxml"
+      fx:controller="cs151.application.CommentController"
+      alignment="CENTER" spacing="16">
+    <padding>
+        <Insets top="24" right="24" bottom="24" left="24"/>
+    </padding>
+
+    <!-- MAIN CONTAINER -->
+    <VBox fx:id="commentBox" alignment="CENTER" spacing="12" visible="true" managed="true">
+
+        <Label text="Adding Comments for"
+               style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+        <!-- Faculty Evaluation Section -->
+        <VBox spacing="8" alignment="CENTER">
+            <Label fx:id="profileNameLabel" 
+                   text="Comments for [Profile Name]" 
+                   style="-fx-font-size:14px; -fx-font-weight:bold;"/>
+            
+            <VBox spacing="5" alignment="CENTER">
+                <Label text="Comments:"/>
+                <TextArea fx:id="commentsArea"
+                          promptText="Add comments"
+                          prefWidth="400"
+                          prefHeight="100"/>
+                <Button text="Add Comment" onAction="#addComment"/>
+            </VBox>
+        </VBox>
+
+        <!-- COMMENT LIST -->
+        <TableView fx:id="commentTable" prefWidth="800" prefHeight="400">
+            <columns>
+                <TableColumn fx:id="commentColumn" text="Comment" prefWidth="400"/>
+                <TableColumn fx:id="dateColumn" text="Date" prefWidth="150"/>
+            </columns>
+
+            <placeholder>
+                <Label text="No comments yet."/>
+            </placeholder>
+        </TableView>
+
+        <!-- BOTTOM BUTTONS -->
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Back" onAction="#showSearch"/>
+        </HBox>
+
+        <Label fx:id="statusLabel"
+               text=""
+               style="-fx-font-size:11px; -fx-text-fill:#666;"/>
+
+    </VBox>
+</VBox>

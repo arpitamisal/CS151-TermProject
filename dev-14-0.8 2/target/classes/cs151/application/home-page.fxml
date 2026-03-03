@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx/fxml"
+      fx:controller="cs151.application.HomeController"
+      alignment="CENTER" spacing="16">
+    <padding>
+        <Insets top="24" right="24" bottom="24" left="24"/>
+    </padding>
+
+    <!-- HOME -->
+    <VBox fx:id="homeBox" alignment="CENTER" spacing="12">
+        <Label text="Students' Knowledgebase"
+               style="-fx-font-size:18px; -fx-font-weight:bold;"/>
+        <Label text="Welcome! Manage programming languages and student profiles."/>
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Define Programming Language" onAction="#showDefine"/>
+            <Button text="Student Profiles" onAction="#showProfile"/>
+            <Button text="View All Students" onAction="#showStudentList"/>
+            <Button text="Search Students" onAction="#showSearch"/>
+        </HBox>
+    </VBox>
+</VBox>

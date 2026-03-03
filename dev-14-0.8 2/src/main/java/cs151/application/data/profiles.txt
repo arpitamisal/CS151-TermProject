@@ -1,0 +1,5 @@
+2|Fish|Senior|false||Back-End|Swift|MongoDB|true|false
+5|Airi|Junior|true|vcx|Front-End|Swift|MongoDB|true|false
+6|Peace|Freshman|true|fsda|Front-End|Java,Python,Swift|MongoDB|true|false
+13|Sophia|Sophomore|false||Full-Stack|Python|MongoDB|false|false
+15|Cathy|Freshman|false||Front-End|Java|Postgres|false|false
