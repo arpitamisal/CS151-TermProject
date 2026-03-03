@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx/fxml"
+      fx:controller="cs151.application.DefineController"
+      alignment="CENTER" spacing="16">
+    <padding>
+        <Insets top="24" right="24" bottom="24" left="24"/>
+    </padding>
+
+
+    <VBox fx:id="defineBox" alignment="CENTER" spacing="12" visible="true" managed="true">
+        <Label text="Define Programming Language"
+               style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+        <VBox spacing="6" alignment="CENTER">
+            <Label text="Name (required)"/>
+            <TextField fx:id="nameField" promptText="e.g., Java, Python"/>
+            <Label fx:id="statusLabel" text=""
+                   style="-fx-font-size:11px; -fx-text-fill:#666;"/>
+        </VBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Save" onAction="#saveDefine"/>
+            <Button text="Back to Home" onAction="#showHome"/>
+        </HBox>
+        
+        <Label text="Programming Languages"
+               style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+        <TableView fx:id="progLangTable" prefWidth="360" prefHeight="200">
+            <columns>
+                <TableColumn fx:id="nameCol" text="Name" prefWidth="340"/>
+            </columns>
+        </TableView>
+    </VBox>
+</VBox>
